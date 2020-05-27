@@ -1,0 +1,8 @@
+# matlab autosave and temp files
+*.asv
+*.m~
+
+# saved workspaces and recordings
+*.mat
+*.avi
+*.mp4
