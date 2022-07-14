@@ -7,3 +7,6 @@ I have used the Voila-jones algorithm in this project. I have used a function ca
 
 We have used Graphic User Interface(GUI) which allows us to choose between detection of face and eyes.
 
+![alt text](https://github.com/Patil-Vinay/Face-And-Eyes-Recognition-In-Matlab/blob/main/Result%202.png)
+
+![alt text](https://github.com/Patil-Vinay/Face-And-Eyes-Recognition-In-Matlab/blob/main/Result.png)
