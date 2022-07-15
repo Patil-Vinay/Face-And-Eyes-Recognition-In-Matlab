@@ -1,10 +1,10 @@
 function varargout = face_recognition(varargin)
-% TESTING MATLAB code for face_recognition.fig
-%      TESTING, by itself, creates a new TESTING or raises the existing
-%      singleton*.
+% FACE_RECOGNITION MATLAB code for face_recognition.fig
+%      FACE_RECOGNITION, by itself, creates a new FACE_RECOGNITION or
+%      raises the existing singleton*.
 %
-%      H = TESTING returns the handle to a new TESTING or the handle to
-%      the existing singleton*.
+%      H = FACE_RECOGNITION returns the handle to a new FACE_RECOGNITION
+%      or the handle to the existing singleton*.
 
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
@@ -25,8 +25,15 @@ end
 
 function face_recognition_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
+
+% the fig was first saved as testing.fig and its buttons still call testing(),
+% so point them back to this file
+set(handles.start, 'Callback', @(h,e)face_recognition('start_Callback',h,e,guidata(h)));
+set(handles.face,  'Callback', @(h,e)face_recognition('face_Callback',h,e,guidata(h)));
+set(handles.eyes,  'Callback', @(h,e)face_recognition('eyes_Callback',h,e,guidata(h)));
+set(handles.stop,  'Callback', @(h,e)face_recognition('stop_Callback',h,e,guidata(h)));
+
 axes(handles.axes1);
-imshow('nature.jpg');
 axis off;
 guidata(hObject, handles);
 
