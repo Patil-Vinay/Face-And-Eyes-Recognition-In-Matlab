@@ -1,12 +1,41 @@
 # Face-And-Eyes-Recognition-In-Matlab
-Our system of face detection using MATLAB can detect not only just human face but also eyes. Basically face detection is the process of detecting one or more human faces in real-time videos.
 
-It is very easy and simple task for humans to identify faces than computers. In this field there is a large variation caused by expressions or facial appearance. So, I have build a computer system to detect the face and eyes of the end-user. 
+A small MATLAB GUI that detects a face or the eyes in the live webcam feed and draws a box around them.
 
-I have used the Voila-jones algorithm in this project. I have used a function called **vision.CascadeObjectDetector** is used to detect objects using Voila Jones algorithm. This fuction can detect face, eyes, nose mouth or upper body of the user. In this project we are just detecting face and eyes of the person. The only negative point of this algorithm is it takes more time in training and detects the objects fast.
+Detection uses the Viola-Jones method through `vision.CascadeObjectDetector` from the Computer Vision Toolbox. Nothing is trained here, it uses the cascade models that come with MATLAB:
 
-We have used Graphic User Interface(GUI) which allows us to choose between detection of face and eyes.
+- Face uses the default frontal face model.
+- Eyes uses the `EyePairBig` model, which finds both eyes together as one box.
 
-![alt text](https://github.com/Patil-Vinay/Face-And-Eyes-Recognition-In-Matlab/blob/main/Result%202.png)
+## Files
 
-![alt text](https://github.com/Patil-Vinay/Face-And-Eyes-Recognition-In-Matlab/blob/main/Result.png)
+- `face_recognition.m` - GUI code and button callbacks
+- `face_recognition.fig` - GUI layout made in GUIDE
+- `images/` - screenshots of the GUI running
+
+## Requirements
+
+- MATLAB with the Computer Vision Toolbox and the Image Acquisition Toolbox
+- Image Acquisition Toolbox Support Package for OS Generic Video Interface (the `winvideo` adaptor, so Windows only)
+- A webcam
+
+## How to run
+
+Keep both files in the same folder, open it in MATLAB and run:
+
+```matlab
+face_recognition
+```
+
+- **START** opens the first webcam and shows the live video.
+- **FACE** draws a box around faces.
+- **EYES** draws a box around the eyes.
+- **STOP** stops the camera.
+
+You can switch between FACE and EYES while the camera is running. The camera uses its default format. If you have more than one webcam, change the device number in `videoinput('winvideo', 1)`.
+
+## Screenshots
+
+![Face detection](images/face.png)
+
+![Eyes detection](images/eyes.png)
